@@ -55,7 +55,8 @@ class DoorbellListenerService : Service() {
 
     private fun playMp3() {
         if (mediaPlayer?.isPlaying == true) mediaPlayer?.stop()
-        mediaPlayer = MediaPlayer.create(this, R.raw.ringtone) // coloca ringtone.mp3 em res/raw
+        mediaPlayer = MediaPlayer.create(this, R.raw.ringtone)
+        // coloca ringtone.mp3 em app/src/main/res/raw/ringtone.mp3
         mediaPlayer?.setWakeMode(applicationContext, PowerManager.PARTIAL_WAKE_LOCK)
         mediaPlayer?.start()
     }
